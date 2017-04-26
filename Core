@@ -1,0 +1,115 @@
+package Core
+
+import Logger.LoggerScala
+
+import scala.collection.mutable.ArrayBuffer
+import scala.util.Random
+
+//The class compares two objects for the test and returns a value of three/false
+
+trait CompareObjectTest  extends LoggerScala with App{
+
+  def compareObject(x: Any, z: Any): Boolean = {
+    var y: Boolean = false;
+    if (x == z) y = true;
+    if (x != z) y = false;
+    y;
+
+  }
+
+ //Specifies the type of value that the test returns
+
+    def definTypeObject(x: Any): String = x match {
+      case x: Int => "Int"
+      case x: String => "String"
+      case x: Float => "Float"
+      case x: Long => "Long"
+      case x: Short => "Short"
+      case x: Boolean => "Boolean"
+      case x: Char => "Char"
+      case _ => "Any"
+    }
+
+    def compareNull(x:Int): Boolean = {
+      var y: Boolean = false;
+      if (x > 0) y = true;
+      if (x < 0 ) y = false;
+      y;
+
+    }
+
+
+  def compareNull(x:Long): Boolean = {
+    var y: Boolean = false;
+    if (x > 0) y = true;
+    if (x < 0 ) y = false;
+    y;
+
+  }
+
+
+
+  def compareNull(x:Double): Boolean = {
+    var y: Boolean = false;
+    if (x > 0) y = true;
+    if (x < 0 ) y = false;
+    y;
+
+  }
+
+  def compareNull(x:Float): Boolean = {
+    var y: Boolean = false;
+    if (x > 0) y = true;
+    if (x < 0 ) y = false;
+    y;
+
+  }
+
+  def compareNotNull(x:Int): Boolean = {
+    var y: Boolean = false;
+    if (x != 0) y = true;
+    if (x ==0 ) y = false;
+    y;
+
+  }
+
+  //The method will return a random Int of type
+  def compareRandom():Int= {
+    var y = Random.nextInt();
+       y;
+
+  }
+
+  //Returns a random number from the specified range
+  def compareRandom(x:Int):Int= {
+
+    if(x>0){
+
+      var y = Random.nextInt(x);
+      return y;
+    } else{
+
+      println("Number must be greater than 0")
+
+      return 0;
+    }
+
+    }
+
+
+//The method will return a random String of type
+  def compareRandomString():String= {
+
+    var arrayStringRandom = new ArrayBuffer[String]()
+    arrayStringRandom.+=("Кино","Результат","Молоко","Кофе",
+      "Город","Метод","Класс","Человек","Программист","Простуда","Синоним","Лошадь",
+      "Улица","Дом","Купец","Модель","Солнце","Капли","Дождь","  ","Окно","Дверь")
+    var y = Random.nextInt(22);
+    arrayStringRandom(y);
+
+
+  }
+
+
+
+}
