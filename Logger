@@ -1,0 +1,69 @@
+package Logger
+
+import java.util.Date
+
+import AnnotationFramework.Comment
+
+//  "Класс логгер. Предназначен для отображения логов при отладке программ.
+//   " Выводит данные на консоль - время, тип сообщения, сообщение."
+//  " Трейт необходимо добавлять налету - при создании объекта и реализовывать"
+//  " необходимые методы."
+
+trait LoggerScala {
+
+  @Comment (comments =
+
+    "Метод info Выводит любой тип данных на консоль." +
+    "Лучше всего использовать тип String" )
+  def info(s: Any): Unit = {
+
+    println("Время события : " + new Date().toString())
+    println("Type Messege : Info")
+
+    println("Messege Logger : " + s)
+
+  }
+
+  @Comment (comments =
+    "Может выводить на консоль переданый " +
+    "результат теста и сообщение к нему" )
+  def info(s: Any, messege:String): Unit = {
+
+    println("Время события : " + new Date().toString())
+    println("Type Messege : Info")
+
+    println("Messege Logger :  " + messege+ " " + s)
+
+  }
+
+
+
+
+  /**
+    * Метод severe -   информационное
+    * предупреждение о серьозных проблемах
+    * в методе для отладочной информации.
+    */
+  def severe(s: String): Unit = {
+
+    println("Время события : " + new Date().toString())
+    println("Type Messege : Severe")
+
+    println("Messege Logger : " + s)
+
+  }
+
+  /** Метод warn -   информационное
+    * предупреждение о стандартных проблемах
+    * в методе для отладочной информации.
+    */
+  def warn(s: String): Unit = {
+
+    println("Время события : " + new Date().toString())
+    println("Type Messege : Warn")
+
+    println("Messege Logger : " + s)
+
+  }
+
+}
